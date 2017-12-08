@@ -31,5 +31,5 @@ $ ./restart
 
 클라이언트 요청 테스트
 ```
-$ python client.py
+$ ./client
 ```

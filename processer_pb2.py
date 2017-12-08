@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='processer.proto',
   package='nlp',
   syntax='proto3',
-  serialized_pb=_b('\n\x0fprocesser.proto\x12\x03nlp\"4\n\x0cInputRequest\x12\r\n\x05input\x18\x01 \x01(\t\x12\x15\n\routputs_count\x18\x02 \x01(\x05\"/\n\rReloadRequest\x12\x0c\n\x04\x63mds\x18\x01 \x03(\t\x12\x10\n\x08\x66ilepath\x18\x02 \x01(\t\"\x1b\n\x08Response\x12\x0f\n\x07message\x18\x01 \x01(\t\"!\n\x0eOutputResponse\x12\x0f\n\x07results\x18\x01 \x03(\t2m\n\tProcesser\x12\x31\n\x05Input\x12\x11.nlp.InputRequest\x1a\x13.nlp.OutputResponse\"\x00\x12-\n\x06Reload\x12\x12.nlp.ReloadRequest\x1a\r.nlp.Response\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x0fprocesser.proto\x12\x03nlp\"4\n\x0cInputRequest\x12\r\n\x05input\x18\x01 \x01(\t\x12\x15\n\routputs_count\x18\x02 \x01(\x05\"9\n\rReloadRequest\x12\x0c\n\x04\x63mds\x18\x01 \x03(\t\x12\x1a\n\x12header_lines_count\x18\x02 \x01(\x05\"\x1b\n\x08Response\x12\x0f\n\x07message\x18\x01 \x01(\t\"!\n\x0eOutputResponse\x12\x0f\n\x07results\x18\x01 \x01(\t2m\n\tProcesser\x12\x31\n\x05Input\x12\x11.nlp.InputRequest\x1a\x13.nlp.OutputResponse\"\x00\x12-\n\x06Reload\x12\x12.nlp.ReloadRequest\x1a\r.nlp.Response\"\x00\x62\x06proto3')
 )
 
 
@@ -78,9 +78,9 @@ _RELOADREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='filepath', full_name='nlp.ReloadRequest.filepath', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='header_lines_count', full_name='nlp.ReloadRequest.header_lines_count', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -97,7 +97,7 @@ _RELOADREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=78,
-  serialized_end=125,
+  serialized_end=135,
 )
 
 
@@ -127,8 +127,8 @@ _RESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=127,
-  serialized_end=154,
+  serialized_start=137,
+  serialized_end=164,
 )
 
 
@@ -141,8 +141,8 @@ _OUTPUTRESPONSE = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='results', full_name='nlp.OutputResponse.results', index=0,
-      number=1, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -158,8 +158,8 @@ _OUTPUTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=156,
-  serialized_end=189,
+  serialized_start=166,
+  serialized_end=199,
 )
 
 DESCRIPTOR.message_types_by_name['InputRequest'] = _INPUTREQUEST
@@ -204,8 +204,8 @@ _PROCESSER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=191,
-  serialized_end=300,
+  serialized_start=201,
+  serialized_end=310,
   methods=[
   _descriptor.MethodDescriptor(
     name='Input',

@@ -5,7 +5,7 @@ echo "port: $PORT"
 
 mkdir -p log
 
-docker run -d --name $CONTAINER_NAME -it -p $PORT:50051 -u `id -u $USER` \
+docker run -d --name $CONTAINER_NAME -it -p $PORT:50051 \
   -v "$(pwd)/log":/app/log \
   daangn/grpc-processer server.py --log="log/${CONTAINER_NAME}.log" \
     --debug cat

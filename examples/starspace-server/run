@@ -1,0 +1,13 @@
+#!/bin/bash
+source config.sh
+echo "container_name: $CONTAINER_NAME"
+echo "port: $PORT"
+
+mkdir -p log
+
+docker run -d --name $CONTAINER_NAME -it -p $PORT:50051 \
+  -v "$(pwd)/log":/app/log \
+  -v $MODEL_PATH:/app/model \
+  daangn/starspace-server server.py --log="log/${CONTAINER_NAME}.log" \
+    --header_lines_count 4 \
+    --debug /app/StarSpace/embed_doc /app/model

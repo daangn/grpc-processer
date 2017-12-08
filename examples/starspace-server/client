@@ -1,0 +1,7 @@
+#!/bin/bash
+source config.sh
+
+CONTAINER_ID=`docker ps -aqf "name=$CONTAINER_NAME"`
+
+docker exec -t $CONTAINER_ID python client.py input --input 'Hello, grpc-processer!' --outputs_count 2
+docker exec -t $CONTAINER_ID python client.py reload

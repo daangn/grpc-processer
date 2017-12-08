@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package nlp;
+
+service Processer {
+  rpc Input (InputRequest) returns (OutputResponse) {}
+  rpc Reload (ReloadRequest) returns (Response) {}
+}
+
+message InputRequest {
+  string input = 1;
+  int32 outputs_count = 2;
+}
+
+message ReloadRequest {
+  repeated string cmds = 1;
+  string filepath = 2;
+}
+
+message Response {
+  string message = 1;
+}
+
+message OutputResponse {
+  repeated string results = 1;
+}

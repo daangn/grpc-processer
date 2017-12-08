@@ -1,0 +1,11 @@
+#!/bin/bash
+source config.sh
+echo "container_name: $CONTAINER_NAME"
+echo "port: $PORT"
+
+mkdir -p log
+
+docker run -d --name $CONTAINER_NAME -it -p $PORT:50051 -u `id -u $USER` \
+  -v "$(pwd)/log":/app/log \
+  daangn/grpc-processer server.py --log="log/${CONTAINER_NAME}.log" \
+    --debug cat

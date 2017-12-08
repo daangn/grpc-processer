@@ -1,4 +1,4 @@
 #!/bin/bash
-CONTAINER_NAME="starspace"
+CONTAINER_NAME="starspace-server"
 PORT=50052
 MODEL_PATH=""

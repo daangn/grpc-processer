@@ -1,12 +1,14 @@
 #!/bin/bash
-source config.sh
+source config.sh $1
 echo "container_name: $CONTAINER_NAME"
 echo "port: $PORT"
 
-mkdir -p log
+ROOT="$(pwd)/$(dirname "$0")"
+
+mkdir -p "${ROOT}/log"
 
 docker run -d --name $CONTAINER_NAME -it -p $PORT:50051 \
-  -v "$(pwd)/log":/app/log \
+  -v "${ROOT}/log":/app/log \
   -v $MODEL_PATH:/app/model \
   daangn/starspace-server server.py --log="log/${CONTAINER_NAME}.log" \
     --header_lines_count 4 \

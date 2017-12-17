@@ -1,9 +1,11 @@
 #!/bin/bash
-CONTAINER_NAME=$1
+# rename this to config.sh
+CONTAINER_NAME=$1   # docker container name and faiss-server name
 
 if [ $CONTAINER_NAME == 'starspace-server' ]; then
-  PORT=50052
-  MODEL_PATH=""
+  PORT=50052    # grpc port
+  MODEL_PATH="" # starspace train model
+# another starspace-server
 elif [ $CONTAINER_NAME == 'feedback-embedding' ]; then
   PORT=50053
   MODEL_PATH=""

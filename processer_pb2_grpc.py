@@ -15,12 +15,12 @@ class ProcesserStub(object):
       channel: A grpc.Channel.
     """
     self.Input = channel.unary_unary(
-        '/nlp.Processer/Input',
+        '/grpc.Processer/Input',
         request_serializer=processer__pb2.InputRequest.SerializeToString,
         response_deserializer=processer__pb2.OutputResponse.FromString,
         )
     self.Reload = channel.unary_unary(
-        '/nlp.Processer/Reload',
+        '/grpc.Processer/Reload',
         request_serializer=processer__pb2.ReloadRequest.SerializeToString,
         response_deserializer=processer__pb2.Response.FromString,
         )
@@ -59,5 +59,5 @@ def add_ProcesserServicer_to_server(servicer, server):
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'nlp.Processer', rpc_method_handlers)
+      'grpc.Processer', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))

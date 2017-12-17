@@ -17,9 +17,9 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='processer.proto',
-  package='nlp',
+  package='grpc',
   syntax='proto3',
-  serialized_pb=_b('\n\x0fprocesser.proto\x12\x03nlp\"4\n\x0cInputRequest\x12\r\n\x05input\x18\x01 \x01(\t\x12\x15\n\routputs_count\x18\x02 \x01(\x05\"9\n\rReloadRequest\x12\x0c\n\x04\x63mds\x18\x01 \x03(\t\x12\x1a\n\x12header_lines_count\x18\x02 \x01(\x05\"\x1b\n\x08Response\x12\x0f\n\x07message\x18\x01 \x01(\t\"!\n\x0eOutputResponse\x12\x0f\n\x07results\x18\x01 \x01(\t2m\n\tProcesser\x12\x31\n\x05Input\x12\x11.nlp.InputRequest\x1a\x13.nlp.OutputResponse\"\x00\x12-\n\x06Reload\x12\x12.nlp.ReloadRequest\x1a\r.nlp.Response\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x0fprocesser.proto\x12\x04grpc\"4\n\x0cInputRequest\x12\r\n\x05input\x18\x01 \x01(\t\x12\x15\n\routputs_count\x18\x02 \x01(\x05\"9\n\rReloadRequest\x12\x0c\n\x04\x63mds\x18\x01 \x03(\t\x12\x1a\n\x12header_lines_count\x18\x02 \x01(\x05\"\x1b\n\x08Response\x12\x0f\n\x07message\x18\x01 \x01(\t\"!\n\x0eOutputResponse\x12\x0f\n\x07results\x18\x01 \x01(\t2q\n\tProcesser\x12\x33\n\x05Input\x12\x12.grpc.InputRequest\x1a\x14.grpc.OutputResponse\"\x00\x12/\n\x06Reload\x12\x13.grpc.ReloadRequest\x1a\x0e.grpc.Response\"\x00\x62\x06proto3')
 )
 
 
@@ -27,20 +27,20 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _INPUTREQUEST = _descriptor.Descriptor(
   name='InputRequest',
-  full_name='nlp.InputRequest',
+  full_name='grpc.InputRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='input', full_name='nlp.InputRequest.input', index=0,
+      name='input', full_name='grpc.InputRequest.input', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='outputs_count', full_name='nlp.InputRequest.outputs_count', index=1,
+      name='outputs_count', full_name='grpc.InputRequest.outputs_count', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -58,27 +58,27 @@ _INPUTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24,
-  serialized_end=76,
+  serialized_start=25,
+  serialized_end=77,
 )
 
 
 _RELOADREQUEST = _descriptor.Descriptor(
   name='ReloadRequest',
-  full_name='nlp.ReloadRequest',
+  full_name='grpc.ReloadRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='cmds', full_name='nlp.ReloadRequest.cmds', index=0,
+      name='cmds', full_name='grpc.ReloadRequest.cmds', index=0,
       number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='header_lines_count', full_name='nlp.ReloadRequest.header_lines_count', index=1,
+      name='header_lines_count', full_name='grpc.ReloadRequest.header_lines_count', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -96,20 +96,20 @@ _RELOADREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=78,
-  serialized_end=135,
+  serialized_start=79,
+  serialized_end=136,
 )
 
 
 _RESPONSE = _descriptor.Descriptor(
   name='Response',
-  full_name='nlp.Response',
+  full_name='grpc.Response',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='message', full_name='nlp.Response.message', index=0,
+      name='message', full_name='grpc.Response.message', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -127,20 +127,20 @@ _RESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=137,
-  serialized_end=164,
+  serialized_start=138,
+  serialized_end=165,
 )
 
 
 _OUTPUTRESPONSE = _descriptor.Descriptor(
   name='OutputResponse',
-  full_name='nlp.OutputResponse',
+  full_name='grpc.OutputResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='results', full_name='nlp.OutputResponse.results', index=0,
+      name='results', full_name='grpc.OutputResponse.results', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -158,8 +158,8 @@ _OUTPUTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=166,
-  serialized_end=199,
+  serialized_start=167,
+  serialized_end=200,
 )
 
 DESCRIPTOR.message_types_by_name['InputRequest'] = _INPUTREQUEST
@@ -171,28 +171,28 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 InputRequest = _reflection.GeneratedProtocolMessageType('InputRequest', (_message.Message,), dict(
   DESCRIPTOR = _INPUTREQUEST,
   __module__ = 'processer_pb2'
-  # @@protoc_insertion_point(class_scope:nlp.InputRequest)
+  # @@protoc_insertion_point(class_scope:grpc.InputRequest)
   ))
 _sym_db.RegisterMessage(InputRequest)
 
 ReloadRequest = _reflection.GeneratedProtocolMessageType('ReloadRequest', (_message.Message,), dict(
   DESCRIPTOR = _RELOADREQUEST,
   __module__ = 'processer_pb2'
-  # @@protoc_insertion_point(class_scope:nlp.ReloadRequest)
+  # @@protoc_insertion_point(class_scope:grpc.ReloadRequest)
   ))
 _sym_db.RegisterMessage(ReloadRequest)
 
 Response = _reflection.GeneratedProtocolMessageType('Response', (_message.Message,), dict(
   DESCRIPTOR = _RESPONSE,
   __module__ = 'processer_pb2'
-  # @@protoc_insertion_point(class_scope:nlp.Response)
+  # @@protoc_insertion_point(class_scope:grpc.Response)
   ))
 _sym_db.RegisterMessage(Response)
 
 OutputResponse = _reflection.GeneratedProtocolMessageType('OutputResponse', (_message.Message,), dict(
   DESCRIPTOR = _OUTPUTRESPONSE,
   __module__ = 'processer_pb2'
-  # @@protoc_insertion_point(class_scope:nlp.OutputResponse)
+  # @@protoc_insertion_point(class_scope:grpc.OutputResponse)
   ))
 _sym_db.RegisterMessage(OutputResponse)
 
@@ -200,16 +200,16 @@ _sym_db.RegisterMessage(OutputResponse)
 
 _PROCESSER = _descriptor.ServiceDescriptor(
   name='Processer',
-  full_name='nlp.Processer',
+  full_name='grpc.Processer',
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=201,
-  serialized_end=310,
+  serialized_start=202,
+  serialized_end=315,
   methods=[
   _descriptor.MethodDescriptor(
     name='Input',
-    full_name='nlp.Processer.Input',
+    full_name='grpc.Processer.Input',
     index=0,
     containing_service=None,
     input_type=_INPUTREQUEST,
@@ -218,7 +218,7 @@ _PROCESSER = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Reload',
-    full_name='nlp.Processer.Reload',
+    full_name='grpc.Processer.Reload',
     index=1,
     containing_service=None,
     input_type=_RELOADREQUEST,
@@ -251,12 +251,12 @@ try:
         channel: A grpc.Channel.
       """
       self.Input = channel.unary_unary(
-          '/nlp.Processer/Input',
+          '/grpc.Processer/Input',
           request_serializer=InputRequest.SerializeToString,
           response_deserializer=OutputResponse.FromString,
           )
       self.Reload = channel.unary_unary(
-          '/nlp.Processer/Reload',
+          '/grpc.Processer/Reload',
           request_serializer=ReloadRequest.SerializeToString,
           response_deserializer=Response.FromString,
           )
@@ -295,7 +295,7 @@ try:
         ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-        'nlp.Processer', rpc_method_handlers)
+        'grpc.Processer', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -344,16 +344,16 @@ try:
     file not marked beta) for all further purposes. This function was
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_deserializers = {
-      ('nlp.Processer', 'Input'): InputRequest.FromString,
-      ('nlp.Processer', 'Reload'): ReloadRequest.FromString,
+      ('grpc.Processer', 'Input'): InputRequest.FromString,
+      ('grpc.Processer', 'Reload'): ReloadRequest.FromString,
     }
     response_serializers = {
-      ('nlp.Processer', 'Input'): OutputResponse.SerializeToString,
-      ('nlp.Processer', 'Reload'): Response.SerializeToString,
+      ('grpc.Processer', 'Input'): OutputResponse.SerializeToString,
+      ('grpc.Processer', 'Reload'): Response.SerializeToString,
     }
     method_implementations = {
-      ('nlp.Processer', 'Input'): face_utilities.unary_unary_inline(servicer.Input),
-      ('nlp.Processer', 'Reload'): face_utilities.unary_unary_inline(servicer.Reload),
+      ('grpc.Processer', 'Input'): face_utilities.unary_unary_inline(servicer.Input),
+      ('grpc.Processer', 'Reload'): face_utilities.unary_unary_inline(servicer.Reload),
     }
     server_options = beta_implementations.server_options(request_deserializers=request_deserializers, response_serializers=response_serializers, thread_pool=pool, thread_pool_size=pool_size, default_timeout=default_timeout, maximum_timeout=maximum_timeout)
     return beta_implementations.server(method_implementations, options=server_options)
@@ -366,19 +366,19 @@ try:
     file not marked beta) for all further purposes. This function was
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_serializers = {
-      ('nlp.Processer', 'Input'): InputRequest.SerializeToString,
-      ('nlp.Processer', 'Reload'): ReloadRequest.SerializeToString,
+      ('grpc.Processer', 'Input'): InputRequest.SerializeToString,
+      ('grpc.Processer', 'Reload'): ReloadRequest.SerializeToString,
     }
     response_deserializers = {
-      ('nlp.Processer', 'Input'): OutputResponse.FromString,
-      ('nlp.Processer', 'Reload'): Response.FromString,
+      ('grpc.Processer', 'Input'): OutputResponse.FromString,
+      ('grpc.Processer', 'Reload'): Response.FromString,
     }
     cardinalities = {
       'Input': cardinality.Cardinality.UNARY_UNARY,
       'Reload': cardinality.Cardinality.UNARY_UNARY,
     }
     stub_options = beta_implementations.stub_options(host=host, metadata_transformer=metadata_transformer, request_serializers=request_serializers, response_deserializers=response_deserializers, thread_pool=pool, thread_pool_size=pool_size)
-    return beta_implementations.dynamic_stub(channel, 'nlp.Processer', cardinalities, options=stub_options)
+    return beta_implementations.dynamic_stub(channel, 'grpc.Processer', cardinalities, options=stub_options)
 except ImportError:
   pass
 # @@protoc_insertion_point(module_scope)

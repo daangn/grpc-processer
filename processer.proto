@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package nlp;
+package grpc;
 
 service Processer {
   rpc Input (InputRequest) returns (OutputResponse) {}

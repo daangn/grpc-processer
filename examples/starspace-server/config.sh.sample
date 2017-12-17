@@ -1,4 +1,10 @@
 #!/bin/bash
-CONTAINER_NAME="starspace-server"
-PORT=50052
-MODEL_PATH=""
+CONTAINER_NAME=$1
+
+if [ $CONTAINER_NAME == 'starspace-server' ]; then
+  PORT=50052
+  MODEL_PATH=""
+elif [ $CONTAINER_NAME == 'feedback-embedding' ]; then
+  PORT=50053
+  MODEL_PATH=""
+fi

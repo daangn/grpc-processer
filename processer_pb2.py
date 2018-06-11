@@ -197,39 +197,6 @@ OutputResponse = _reflection.GeneratedProtocolMessageType('OutputResponse', (_me
 _sym_db.RegisterMessage(OutputResponse)
 
 
-
-_PROCESSER = _descriptor.ServiceDescriptor(
-  name='Processer',
-  full_name='grpc.Processer',
-  file=DESCRIPTOR,
-  index=0,
-  options=None,
-  serialized_start=202,
-  serialized_end=315,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Input',
-    full_name='grpc.Processer.Input',
-    index=0,
-    containing_service=None,
-    input_type=_INPUTREQUEST,
-    output_type=_OUTPUTRESPONSE,
-    options=None,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Reload',
-    full_name='grpc.Processer.Reload',
-    index=1,
-    containing_service=None,
-    input_type=_RELOADREQUEST,
-    output_type=_RESPONSE,
-    options=None,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_PROCESSER)
-
-DESCRIPTOR.services_by_name['Processer'] = _PROCESSER
-
 try:
   # THESE ELEMENTS WILL BE DEPRECATED.
   # Please use the generated *_pb2_grpc.py files instead.

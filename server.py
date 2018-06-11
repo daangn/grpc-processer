@@ -24,6 +24,8 @@ class Processer(pb2_grpc.ProcesserServicer):
 
     def Input(self, request, context): 
         logging.debug('input: %s', request.input)
+        if len(request.input) < 1:
+            raise Exception('empty input')
 
         self._proc.stdin.write("%s\n" % request.input)
         results = []

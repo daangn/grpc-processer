@@ -60,6 +60,11 @@ class Processer(pb2_grpc.ProcesserServicer):
             line = self._proc.stdout.readline()
             logging.info(line[0:-1])
 
+        return_code = self._proc.poll()
+        if type(return_code) == int and return_code < 0:
+            raise Exception("The process was terminated by signal %d. : %s" % (
+                    return_code, ' '.join(cmds)))
+
         if pre_proc:
             pre_proc.kill()
             logging.info('pre process killed')

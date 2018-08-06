@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+if [ -n "$1" ] && [[ "$1" == s3://* ]]; then
+  REMOTE_PATH="$1"
+  LOCAL_PATH="/tmp/model"
+  aws s3 cp $REMOTE_PATH $LOCAL_PATH --only-show-errors
+  shift
+  set -- "$LOCAL_PATH" "$@"
+fi
+
+embed_doc $@

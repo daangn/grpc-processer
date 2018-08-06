@@ -9,7 +9,7 @@ mkdir -p "${ROOT}/log"
 
 docker run -d --name $CONTAINER_NAME -it -p $PORT:50051 \
   -v "${ROOT}/log":/app/log \
-  -v $MODEL_PATH:/app/model \
+  --volumes-from aws-config \
   daangn/starspace-server server.py --log="log/${CONTAINER_NAME}.log" \
     --header_lines_count 4 \
-    --debug /app/StarSpace/embed_doc /app/model
+    --debug /app/StarSpace/embed_doc_extend s3://daangn/ml/similar-feedbacks/models/feedback_doc_production

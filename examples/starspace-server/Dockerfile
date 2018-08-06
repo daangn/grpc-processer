@@ -7,3 +7,8 @@ RUN unzip -q boost_1_63_0.zip && mv boost_1_63_0 /usr/local/bin && rm boost_1_63
 RUN wget -q https://github.com/facebookresearch/StarSpace/archive/master.zip
 RUN unzip -q master.zip && rm master.zip && mv StarSpace-master StarSpace
 RUN cd StarSpace && make && make embed_doc
+RUN pip install awscli
+
+ENV PATH="/app/StarSpace:${PATH}"
+
+COPY embed_doc_extend /app/StarSpace/

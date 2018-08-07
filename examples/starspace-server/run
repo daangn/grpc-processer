@@ -8,8 +8,7 @@ ROOT="$(pwd)/$(dirname "$0")"
 mkdir -p "${ROOT}/log"
 
 docker run -d --name $CONTAINER_NAME -it -p $PORT:50051 \
-  -v "${ROOT}/log":/app/log \
   --volumes-from aws-config \
-  daangn/starspace-server server.py --log="log/${CONTAINER_NAME}.log" \
-    --header_lines_count 4 \
-    --debug /app/StarSpace/embed_doc_extend s3://daangn/ml/similar-feedbacks/models/feedback_doc_production
+  daangn/starspace-server server.py \
+    --header-lines-count 4 \
+    --debug embed_doc_extend s3://daangn/ml/similar-feedbacks/models/starspace-production

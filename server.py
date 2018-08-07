@@ -75,9 +75,9 @@ class Processer(pb2_grpc.ProcesserServicer):
 
 
 @click.command()
-@click.option('--log', default='log/processer.log', help='log filepath')
+@click.option('--log', help='log filepath')
 @click.option('--debug', is_flag=True, help='debug')
-@click.option('--header_lines_count', default=0, help='skip header lines count')
+@click.option('--header-lines-count', default=0, help='skip header lines count')
 @click.argument('cmds', nargs=-1)
 def serve(cmds, log, debug, header_lines_count):
     if log:
